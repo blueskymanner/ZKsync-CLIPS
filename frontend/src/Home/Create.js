@@ -291,29 +291,6 @@ function Create() {
   }
 
 
-  // useEffect(() => {
-  //   if (isConnected) {
-  //     balanceOf();
-  //   }
-  // }, [balanceof]);
-
-  // useEffect(() => {
-  //   clipOwner();
-  // }, [clipowner]);
-
-  // useEffect(() => {
-  //   prizePool();
-  // }, [prizepool]);
-
-  // useEffect(() => {
-  //   clipCost();
-  // }, [clipcost]);
-
-  // useEffect(() => {
-  //   lastClipUpdate();
-  // }, [lastclipupdate]);
-
-
   useEffect(() => {
     if (isConnected) {
       balanceOf();
@@ -322,6 +299,17 @@ function Create() {
     prizePool();
     clipCost();
     lastClipUpdate();
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      const lastclipupdateTime = await readContract({
+        address: contractAddr,
+        abi: ZKclipsABI,
+        functionName: 'lastClipUpdate',
+      })
+      setStartDate(Number(lastclipupdateTime) * 1000 + 28800000);
+    })()
   }, []);
 
 

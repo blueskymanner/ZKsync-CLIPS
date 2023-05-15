@@ -47,24 +47,6 @@ function App() {
     const { address } = useAccount();
     const { chain } = useNetwork();
 
-    const [factoryContract, setFactoryContract] = useState('');
-    const [referContract, setReferContract] = useState('');
-    const [totalDeployments, setTotalDeployments] = useState([]);
-
-    const sepoliaFactoryContract = "0x3a216D8c496011281cd851ED6803cbdbfF3450cB";
-    const sepoliaReferContract = "0xacc74EcdF64Ec772eFFbfDe1Fb68b39163e58d6f";
-    const mumbaiFactoryContract = "0x3a216D8c496011281cd851ED6803cbdbfF3450cB";
-    const mumbaiReferContract = "0xacc74EcdF64Ec772eFFbfDe1Fb68b39163e58d6f";
-    const fujiFactoryContract = "0x3a216D8c496011281cd851ED6803cbdbfF3450cB";
-    const fujiReferContract = "0xacc74EcdF64Ec772eFFbfDe1Fb68b39163e58d6f";
-
-    useEffect(() => {
-        let contract1 = chain?.id == 11155111 ? sepoliaFactoryContract : chain?.id == 80001 ? mumbaiFactoryContract : chain?.id === 43113 && fujiFactoryContract;
-        let contract2 = chain?.id == 11155111 ? sepoliaReferContract : chain?.id == 80001 ? mumbaiReferContract : chain?.id === 43113 && fujiReferContract;
-        setFactoryContract(contract1);
-        setReferContract(contract2);
-    }, [chain?.id]);
-
     return (
         <WagmiConfig client={wagmiClient}>
             <RainbowKitProvider chains={chains} theme={merge(darkTheme({
