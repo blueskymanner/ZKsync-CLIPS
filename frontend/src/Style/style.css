@@ -1,0 +1,124 @@
+.total {
+    background-color: #000;
+}
+
+.home {
+    max-width: 1000px;
+    min-height: calc(100vh - 80px);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1500px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.logo-banner,
+.logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.logo-img {
+    max-width: 300px;
+}
+
+.buttons-section, .mobile-buttons-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.countDown-section {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+}
+
+.common-button {
+    display: block;
+    width: 190px;
+    height: auto;
+    background-color: rgb(56, 152, 236);
+    background-image: linear-gradient(203deg, rgb(174, 97, 243), rgb(0, 70, 198));
+    box-shadow: rgb(0, 12, 143) -1px -6px 17px 2px inset;
+    letter-spacing: 0.2px;
+    border-radius: 14px;
+    transition: all 650ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    line-height: inherit;
+    padding: 12px;
+    border-width: 1px;
+    border-style: initial;
+    border-image: initial;
+    text-decoration: none;
+}
+
+.common-button:hover,
+.common-button:active {
+    opacity: 0.8;
+}
+
+.balance {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lock-timer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+.lock-timer .time-item {
+    display: flex;
+    flex-direction: column;
+    grid-auto-rows: 1fr;
+    width: 20%;
+    margin: 5px;
+    text-align: center;
+    min-width: 50px;
+    align-items: center;
+}
+
+.lock-timer .time-spacer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5%;
+    height: 60px;
+}
+
+.time-item .time-area {
+    width: 100%;
+    border-radius: 11px;
+    background: linear-gradient(44deg, rgba(22, 78, 182, 0.32), rgba(136, 75, 190, 0.31));
+    text-align: center;
+}
+
+
+@media screen and (max-width: 820px) {
+    .home {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .balance {
+        margin-bottom: 20px;
+    }
+    
+    .common-button {
+        width: 165px;
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+}
